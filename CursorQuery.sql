@@ -1,6 +1,6 @@
 USE TestDB
 
-DECLARE @number FLOAT
+DECLARE @number INT
 
 DECLARE @curs CURSOR
 
@@ -13,10 +13,9 @@ FETCH NEXT FROM @curs INTO @number
 
 WHILE @@FETCH_STATUS = 0 
 BEGIN
-	IF @number < 102 AND @number = 101
+	IF @number < 102 AND @number % 2 = 0
 	BEGIN
 		PRINT @number  
-		PRINT @number 
 	END
 	
 	FETCH NEXT FROM @curs INTO @number
@@ -25,5 +24,3 @@ END
 CLOSE @curs
 
 DEALLOCATE @curs
-
-SELECT LEFT_SHIFT(12345, 5);
