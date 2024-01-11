@@ -1,3 +1,5 @@
+USE TestDB
+
 DECLARE @number FLOAT
 
 DECLARE @curs CURSOR
@@ -23,3 +25,5 @@ END
 CLOSE @curs
 
 DEALLOCATE @curs
+
+SELECT LEFT_SHIFT(12345, 5);
